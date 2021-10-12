@@ -41,10 +41,10 @@ hint - you should be looking at the stage key inside of the objects
 // filtering all of the teams that made it to final stage, use filter!!!
 
 function getFinals(item) {
-	const newArray = item.filter(function (item) {
+	const newArray2 = item.filter(function (item) {
 		return item.Stage === 'Final';
 	});
-	return newArray;
+	return newArray2;
 }
 console.log('task 2', getFinals(fifaData));
 
@@ -56,9 +56,14 @@ Use the higher-order function called getYears to do the following:
 
 // Probably use map over what we had in task 2!!!
 
-function getYears(/* code here */) {
-	/* code here */
+function getYears(data) {
+	const years = data.map(function (data) {
+		return data.Year;
+	});
+	return years;
 }
+
+// console.log('task 3', getYears(getFinals));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use the higher-order function getWinners to do the following:  
