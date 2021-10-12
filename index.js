@@ -1,3 +1,4 @@
+const { arrayExpression } = require('@babel/types');
 const { fifaData } = require('./fifa.js');
 
 // ⚽️ M  V P ⚽️ //
@@ -39,9 +40,13 @@ hint - you should be looking at the stage key inside of the objects
 
 // filtering all of the teams that made it to final stage, use filter!!!
 
-function getFinals(/* code here */) {
-	/* code here */
+function getFinals(item) {
+	const newArray = item.filter(function (item) {
+		return item.Stage === 'Final';
+	});
+	return newArray;
 }
+console.log('task 2', getFinals(fifaData));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use the higher-order function called getYears to do the following: 
@@ -49,7 +54,7 @@ Use the higher-order function called getYears to do the following:
 2. Receive a callback function getFinals from task 2 
 3. Return an array called years containing all of the years in the getFinals data set*/
 
-// Probably usde map over what we had in task 2!!!
+// Probably use map over what we had in task 2!!!
 
 function getYears(/* code here */) {
 	/* code here */
