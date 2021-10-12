@@ -111,10 +111,13 @@ Use the higher order function getAverageGoals to do the following:
 
 // use .toFixed(2) to round to 2 decimal places
 
-function getAverageGoals(/* code here */) {
-	/* code here */
+function getAverageGoals(data) {
+	const averageHomeGoals = data.reduce(function (acc, item) {
+		return acc + item['Home Team Goals'] + item['Away Team Goals'];
+	}, 0);
+	return (averageHomeGoals / data.length).toFixed(2);
 }
-
+console.log('task 6', getAverageGoals(fifaData));
 /// 🥅 STRETCH 🥅 ///
 
 /* 💪💪💪💪💪 Stretch 1: 💪💪💪💪💪 
