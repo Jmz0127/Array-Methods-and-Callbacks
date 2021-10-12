@@ -90,9 +90,14 @@ hint: the strings returned need to exactly match the string in step 4.
 
 // use index in addition to item here. Use map !!!
 
-function getWinnersByYear(/* code here */) {
-	/* code here */
+function getWinnersByYear(data, getYearsCB, getWinnersCB) {
+	const winners = getWinnersCB(data, getFinals);
+	const years = getYearsCB(data, getFinals);
+	return winners.map((item, index) => `In ${years[index]}, ${winners[index]} won the world cup!`);
+	return winners;
 }
+
+console.log('task 5', getWinnersByYear(fifaData, getYears, getWinners));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use the higher order function getAverageGoals to do the following: 
