@@ -56,14 +56,12 @@ Use the higher-order function called getYears to do the following:
 
 // Probably use map over what we had in task 2!!!
 
-function getYears(data) {
-	const years = data.map(function (data) {
-		return data.Year;
+function getYears(data, getFinalsCB) {
+	return getFinalsCB(data).map(function (item) {
+		return item.Year;
 	});
-	return years;
 }
-
-// console.log('task 3', getYears(getFinals));
+console.log('task 3', getYears(fifaData, getFinals));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use the higher-order function getWinners to do the following:  
