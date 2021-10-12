@@ -72,9 +72,11 @@ Use the higher-order function getWinners to do the following:
 
 // compare the points between home and away points. we don't care about overtime, just compare points!!!
 
-function getWinners(/* code here */) {
-	/* code here */
+function getWinners(data, getFinalsCB) {
+	return getFinalsCB(data).map((item) => (item['Home Team Goals'] > item['Away Team Goals'] ? item['Home Team Name'] : item['Away Team Name']));
 }
+
+console.log('task 4', getWinners(fifaData, getFinals));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use the higher-order function getWinnersByYear to do the following:
